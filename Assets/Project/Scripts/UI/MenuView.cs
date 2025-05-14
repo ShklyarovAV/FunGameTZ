@@ -11,6 +11,7 @@ public class MenuView : ViewBase
     private void ClickStart()
     {
         OnStartClick?.Invoke();
+        
     }
 
     private void OnEnable()

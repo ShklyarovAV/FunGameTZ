@@ -338,6 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameType: 0
+  _frameSprite: {fileID: 6350906579379094467}
   _colorSprite: {fileID: 5835757172025916567}
   _animalSprite: {fileID: 3788682653461617351}
   _rb: {fileID: 5836906733288006005}
@@ -365,7 +366,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0

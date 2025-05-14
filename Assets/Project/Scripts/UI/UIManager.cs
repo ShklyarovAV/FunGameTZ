@@ -9,6 +9,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private LoseView _loseView;
     [SerializeField] private GameView _gameView;
 
+    public MenuView MenuView => _menuView;
+    public WinView WinView => _winView;
+    public GameView GameView => _gameView;
+    public LoseView LoseView => _loseView;
+
     private ViewBase _curView;
 
     public void OpenMenuView()
@@ -40,5 +45,19 @@ public class UIManager : MonoBehaviour
 
         _curView = newView;
         _curView.Show();
+    }
+
+    private void OnEnable()
+    {
+        _menuView.OnStartClick += OpenGameView;
+        _loseView.OnContinueClick += OpenGameView;
+        _winView.OnContinueClick += OpenGameView;
+    }
+
+    private void OnDisable()
+    {
+        _menuView.OnStartClick -= OpenGameView;
+        _loseView.OnContinueClick -= OpenGameView;
+        _winView.OnContinueClick -= OpenGameView;
     }
 }

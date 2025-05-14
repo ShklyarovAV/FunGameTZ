@@ -5,6 +5,7 @@ using UnityEngine;
 public class Figure : FigureBase
 {
     [SerializeField] private FrameType _frameType;
+    [SerializeField] private SpriteRenderer _frameSprite;
     [SerializeField] private SpriteRenderer _colorSprite;
     [SerializeField] private SpriteRenderer _animalSprite;
     [SerializeField] private Rigidbody2D _rb;
@@ -32,6 +33,13 @@ public class Figure : FigureBase
         _animalSprite.sprite = figureAnimalData.AnimalSprite;
     }
 
+    public void SetOrderLayer(int value)
+    {
+        _frameSprite.sortingOrder = value;
+        _colorSprite.sortingOrder = value;
+        _animalSprite.sortingOrder = value + 1;
+    }
+
     public bool Equals(Figure figure)
     {
         if (figure == null)
@@ -47,6 +55,14 @@ public class Figure : FigureBase
     public void ActiveRB(bool value)
     {
         _rb.simulated = value;
+    }
+
+    public void StopSimulate()
+    {
+        _rb.simulated = false;
+        _rb.velocity = Vector2.zero;
+        _rb.angularVelocity = 0;
+        _rb.simulated = true;
     }
 
     public void Destroy()

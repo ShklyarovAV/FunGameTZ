@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +8,8 @@ public class FigureController : MonoBehaviour
     private List<Figure> _activeFigures = new List<Figure>();
 
     public FigureSpawner FigureSpawner => _figureSpawner;
+    public int FiguresCount => _activeFigures.Count;
+    public List<Figure> Figures => _activeFigures;
 
     public void AddFigure(Figure figure)
     {
@@ -22,6 +23,14 @@ public class FigureController : MonoBehaviour
 
     public void Clear()
     {
+        foreach (var figure in _activeFigures)
+        {
+            if (figure != null)
+            {
+                Destroy(figure.gameObject);
+            }
+        }
+
         _activeFigures.Clear();
     }
 }

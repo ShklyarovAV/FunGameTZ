@@ -8,12 +8,17 @@ public class SpotController : MonoBehaviour
     [SerializeField] private List<Spot> _spots = new List<Spot>();
     [SerializeField] private int _reqSameCount = 3;
 
+    private List<Figure> _flyFigure = new List<Figure>();
     private FigureController _figureController;
+    private LevelManager _levelManager;
+
+    public int CountReserveSpot => _spots.FindAll(p => !p.IsEmpty).Count;
 
     [Inject]
     public void Construct(LevelManager levelManager)
     {
         _figureController = levelManager.Level.FigureController;
+        _levelManager = levelManager;
     }
 
     public bool TryAddFigure(Figure figure)
@@ -27,12 +32,15 @@ public class SpotController : MonoBehaviour
 
         _spots[freeId].Reserve();
         _figureController.ReleaseFigure(figure);
+        _flyFigure.Add(figure);
 
+        figure.SetOrderLayer(1);
         figure.ActiveRB(false);
         figure.Mover.Move(_spots[freeId].transform.position,
                           () => 
                           {
                               AddFigure(figure, freeId);
+                              _flyFigure.Remove(figure);
                               ReleaseSame();
                           });
 
@@ -42,6 +50,7 @@ public class SpotController : MonoBehaviour
     private void AddFigure(Figure figure, int id)
     {
         _spots[id].Push(figure);
+        figure.SetOrderLayer(-3);
     }
 
     private void ReleaseSame()
@@ -68,5 +77,33 @@ public class SpotController : MonoBehaviour
                 spot.Release();
             }
         }
+
+        if (_spots.FindIndex(p => !p.IsFigureInSpot) == -1)
+        {
+            _levelManager.Level.LoseLevel();
+        }
+
+        if (_spots.FindIndex(p => p.IsFigureInSpot) == -1 && _levelManager.Level.FigureController.FiguresCount == 0)
+        {
+            _levelManager.Level.WinLevel();
+        }
+    }
+
+    public void Clear()
+    {
+        foreach (var spot in _spots)
+        {
+            spot.Clear();
+        }
+
+        foreach (var flyFigure in _flyFigure)
+        {
+            if (flyFigure != null)
+            {
+                Destroy(flyFigure.gameObject);
+            }
+        }
+
+        _flyFigure.Clear();
     }
 }

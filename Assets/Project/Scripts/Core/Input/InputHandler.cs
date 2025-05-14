@@ -9,6 +9,7 @@ public class InputHandler : MonoBehaviour
     [SerializeField] private LayerMask _inputLayer;
 
     private SpotController _spotController;
+    private bool _active;
 
     [Inject]
     public void Construct(LevelManager levelManager)
@@ -18,10 +19,17 @@ public class InputHandler : MonoBehaviour
 
     private void Update()
     {
+        if (!_active) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             Touch();
         }
+    }
+
+    public void SetActive(bool value)
+    {
+        _active = value;
     }
 
     private void Touch()

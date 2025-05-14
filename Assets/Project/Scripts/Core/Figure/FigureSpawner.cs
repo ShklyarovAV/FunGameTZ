@@ -17,16 +17,23 @@ public class FigureSpawner : MonoBehaviour
     [SerializeField] private float _figureSize = 1.2f;
 
     private FigureController _figureController;
+    private LevelManager _levelManager;
 
     [Inject]
     public void Construct(LevelManager levelManager)
     {
         _figureController = levelManager.Level.FigureController;
+        _levelManager = levelManager;
     }
 
-    public void SpawnFigures()
+    public void SpawnFigures(int countSpawnGroup = -1)
     {
-        List<SpawnFigureData> spawnFigureDatas = GenerateFigureDatas(_countSpawnGroup);
+        if (countSpawnGroup == -1)
+        {
+            countSpawnGroup = _countSpawnGroup;
+        }
+
+        List <SpawnFigureData> spawnFigureDatas = GenerateFigureDatas(countSpawnGroup);
         List<Vector3> spawnPoints = GenerateSpawnPoints(spawnFigureDatas.Count);
 
         for (int i = 0; i < spawnFigureDatas.Count; i++)
@@ -42,6 +49,17 @@ public class FigureSpawner : MonoBehaviour
             _figureController.AddFigure(figure);
         }
 
+    }
+
+    public void RefreshFigures()
+    {
+        int newCount = (_levelManager.Level.SpotController.CountReserveSpot
+                       + _levelManager.Level.FigureController.Figures.Count) / 3;
+
+        _levelManager.Level.SpotController.Clear();
+        _figureController.Clear();
+
+        SpawnFigures(newCount);
     }
 
     private List<Vector3> GenerateSpawnPoints(int count)
