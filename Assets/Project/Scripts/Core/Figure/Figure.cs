@@ -7,6 +7,10 @@ public class Figure : FigureBase
     [SerializeField] private FrameType _frameType;
     [SerializeField] private SpriteRenderer _colorSprite;
     [SerializeField] private SpriteRenderer _animalSprite;
+    [SerializeField] private Rigidbody2D _rb;
+
+    [Space(10)]
+    [SerializeField] private FigureMover _mover;
 
     private ColorType _colorType;
     private AnimalType _animalType;
@@ -14,6 +18,7 @@ public class Figure : FigureBase
     public FrameType FrameType => _frameType;
     public ColorType ColorType => _colorType;
     public AnimalType AnimalType => _animalType;
+    public FigureMover Mover => _mover;
 
     public void SetColor(FigureColorData figureColorData)
     {
@@ -29,8 +34,23 @@ public class Figure : FigureBase
 
     public bool Equals(Figure figure)
     {
+        if (figure == null)
+        {
+            return false;
+        }
+
         return _frameType == figure.FrameType &&
-               _colorType == figure._colorType &&
-               _animalType == figure._animalType;
+               _colorType == figure.ColorType &&
+               _animalType == figure.AnimalType;
+    }
+
+    public void ActiveRB(bool value)
+    {
+        _rb.simulated = value;
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 }

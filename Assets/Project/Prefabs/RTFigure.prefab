@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9200256974899343922}
   - component: {fileID: 6722640999007312421}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7063353373506574319}
   - component: {fileID: 5768688586599621115}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Animal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1096275501502541043}
   - component: {fileID: 5441608962321760984}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Interior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,10 @@ GameObject:
   - component: {fileID: 5421666973353899154}
   - component: {fileID: 2221534763570541932}
   - component: {fileID: 3968884805136951542}
-  m_Layer: 0
+  - component: {fileID: 2057078915059498332}
+  - component: {fileID: 9113005577184722720}
+  - component: {fileID: 2177845386441879301}
+  m_Layer: 3
   m_Name: RTFigure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,3 +371,59 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 0.95}
   m_EdgeRadius: 0
+--- !u!114 &2057078915059498332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8623572991756502713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a358f22231244b4fb50746cadd77900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameType: 3
+  _colorSprite: {fileID: 5441608962321760984}
+  _animalSprite: {fileID: 5768688586599621115}
+  _rb: {fileID: 9113005577184722720}
+  _mover: {fileID: 2177845386441879301}
+--- !u!50 &9113005577184722720
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8623572991756502713}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 24ea15fee06acc04baf7c9902f82c1b1, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &2177845386441879301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8623572991756502713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c44f6ff22a310543bc4c7be7bac46e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

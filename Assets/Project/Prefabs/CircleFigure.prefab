@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2803682823332360696}
   - component: {fileID: 6350906579379094467}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2125032634421801865}
   - component: {fileID: 3788682653461617351}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Animal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5144798497549341339}
   - component: {fileID: 5835757172025916567}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Interior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,8 +262,10 @@ GameObject:
   m_Component:
   - component: {fileID: 846492796946719507}
   - component: {fileID: 2383385411247208287}
-  - component: {fileID: 132272000379893825}
-  m_Layer: 0
+  - component: {fileID: 9015251602859187246}
+  - component: {fileID: 5836906733288006005}
+  - component: {fileID: 3485488418817441891}
+  m_Layer: 3
   m_Name: CircleFigure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +325,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.56
---- !u!114 &132272000379893825
+--- !u!114 &9015251602859187246
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -332,6 +334,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 7608645065465670139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3df69f090a8bca43af0058adf02f666, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a358f22231244b4fb50746cadd77900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameType: 0
+  _colorSprite: {fileID: 5835757172025916567}
+  _animalSprite: {fileID: 3788682653461617351}
+  _rb: {fileID: 5836906733288006005}
+  _mover: {fileID: 3485488418817441891}
+--- !u!50 &5836906733288006005
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7608645065465670139}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 24ea15fee06acc04baf7c9902f82c1b1, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &3485488418817441891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7608645065465670139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c44f6ff22a310543bc4c7be7bac46e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

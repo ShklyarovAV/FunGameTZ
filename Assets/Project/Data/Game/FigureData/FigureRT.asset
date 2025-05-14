@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f921712cb2f822046ad877204bca2780, type: 3}
+  m_Name: FigureRT
+  m_EditorClassIdentifier: 
+  _figure: {fileID: 2057078915059498332, guid: 8b9c1a3ef2e4b544fa8030fb3b83ef98, type: 3}

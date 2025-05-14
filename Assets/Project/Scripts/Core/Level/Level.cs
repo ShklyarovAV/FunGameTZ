@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private FigureController _figureController;
+    [SerializeField] private SpotController _spotController;
+    
+    public FigureController FigureController => _figureController;
+    public SpotController SpotController => _spotController;
 
-    // Update is called once per frame
-    void Update()
+    public void StartLevel()
     {
-        
+        _figureController.FigureSpawner.SpawnFigures();
     }
 }

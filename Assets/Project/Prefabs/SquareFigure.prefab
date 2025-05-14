@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2022319349224495439}
   - component: {fileID: 9135946984578198978}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9003241103110239367}
   - component: {fileID: 8482958999530369700}
-  m_Layer: 0
+  - component: {fileID: 1860825597459916342}
+  - component: {fileID: -7175717583246018499}
+  - component: {fileID: -6774570360766826444}
+  m_Layer: 3
   m_Name: SquareFigure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,6 +167,62 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0.15
+--- !u!114 &1860825597459916342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962198875723231264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a358f22231244b4fb50746cadd77900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameType: 1
+  _colorSprite: {fileID: 4057254445540214599}
+  _animalSprite: {fileID: 3527409283756709357}
+  _rb: {fileID: -7175717583246018499}
+  _mover: {fileID: -6774570360766826444}
+--- !u!50 &-7175717583246018499
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962198875723231264}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 24ea15fee06acc04baf7c9902f82c1b1, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-6774570360766826444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962198875723231264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c44f6ff22a310543bc4c7be7bac46e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5484678373955976402
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3968531073023216904}
   - component: {fileID: 3527409283756709357}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Animal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4944398179665074462}
   - component: {fileID: 4057254445540214599}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Interior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
